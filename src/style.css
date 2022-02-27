@@ -1,0 +1,96 @@
+/* Website colors */
+:root {
+    --primary: #29aae2;
+    --accent: #001845;
+    --text: #020101;
+    --text-secondary: #54595f;
+    --overlay: #0116277f;
+    --alternate-background: #f9f8f8;
+    --alternate-background-darker: #f0f0f0;
+    --transparent-white: #ffffffc4;
+    
+    --instagram: #E3425F;
+    --facebook: #365899;
+    --twitter: #1da1f2;
+  }
+
+/* Defaults */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text);
+    margin: 0; /* To remove white border around content. */
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin: 20px;
+}
+
+h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+
+    margin: 20px;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    margin: 10px;
+}
+
+/* Button */
+.istnanosat-button {
+	background-color: var(--primary);
+	border-radius:100px;
+    padding: 15px 30px 30px 15px ; /* top, right, left, bottom */
+	display:inline-block;
+	cursor:pointer;
+	
+    color: white;
+	font-family: 'Montserrat', sans-serif;
+    font-size: 17px; /* Should be the same as body */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+.istnanosat-button:hover {
+	background-color:var(--accent);
+}
+
+/* Nav bar */
+navbar {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Animations */
+.animation-bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+  }
+  
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
