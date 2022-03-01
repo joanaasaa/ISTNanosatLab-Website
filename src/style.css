@@ -99,8 +99,9 @@ navbar {
 .image-background{
   background-color: var(--overlay);
   background-blend-mode: overlay;
-  background-position: center;
-  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* background-url should be specified in child object */
 }

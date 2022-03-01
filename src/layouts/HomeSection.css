@@ -1,14 +1,25 @@
 .home-section-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-    text-align: center;
-    color: var(--text);
+    justify-content: center;
+    align-items: center; /* Objects are (horizontally) in the center */
+    object-fit: cover;
 
+    width: 100vw;
+
+    color: var(--text);
+    text-align: center; /* Text is aligned with flex column axis */
+}
+
+.home-section{
+    max-width: 80vw;
     margin-top: 100px;
     margin-bottom: 100px;
-    max-width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+}
 
-    background-color: white;
+#mission{
+    color: white;
+    background-image: url("../resources/images/launch.jpg");
 }
