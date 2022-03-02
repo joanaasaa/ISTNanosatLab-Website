@@ -48,7 +48,7 @@ h3 {
     font-weight: 400;
 }
 
-/* Button */
+/* Shapes */
 .istnanosat-button {
 	background-color: var(--primary);
 	border-radius:100px;
@@ -66,6 +66,13 @@ h3 {
 }
 .istnanosat-button:hover {
 	background-color:var(--accent);
+}
+
+.responsive-circle {
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1;
 }
 
 /* Nav bar */
@@ -99,8 +106,8 @@ navbar {
 .image-background{
   background-color: var(--overlay);
   background-blend-mode: overlay;
-  background-position-x: center;
-  background-position-y: center;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   /* background-url should be specified in child object */

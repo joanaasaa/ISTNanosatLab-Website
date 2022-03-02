@@ -1,0 +1,7 @@
+.esa-logo-background{
+    background-color: var(--transparent-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center
+}

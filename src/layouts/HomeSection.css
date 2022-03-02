@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; /* Objects are (horizontally) in the center */
-    object-fit: cover;
 
     width: 100vw;
 
