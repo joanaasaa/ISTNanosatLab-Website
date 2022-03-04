@@ -21,84 +21,118 @@ html {
 
 /* Defaults */
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
 
-    font-weight: 400;
-    color: var(--text);
-    margin: 0; /* To remove white border around content. */
+  font-weight: 400;
+  color: var(--text);
+  margin: 0; /* To remove white border around content. */
 }
 
 h1 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 h2 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
+  font-family: 'Rubik', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 /* Shapes */
 .istnanosat-button {
-	background-color: var(--primary);
-	border-radius:100px;
-    padding: 15px 30px 30px 15px ; /* top, right, left, bottom */
-	display:inline-block;
-	cursor:pointer;
-	
-    color: white;
-	font-family: 'Montserrat', sans-serif;
-    font-size: 17px; /* Should be the same as body */
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-align: center;
+  /* Button font */
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px; /* Should be the same as body */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+
+  background-color: var(--primary);
+  border-radius:100px;
+  padding: 15px 30px 30px 15px ; /* top, right, left, bottom */
+  display:inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
+
 .istnanosat-button:hover {
 	background-color:var(--accent);
+  transform: scale(0.8);
+}
+
+
+.istnanosat-button-alternate {
+	/* Button font */
+  color: var(--text);
+	font-family: 'Montserrat', sans-serif;
+  font-size: 17px; /* Should be the same as body */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  margin: 10px;
+  background-color: var(--transparent-white);
+  border-radius:100px;
+  padding: 15px 30px ;
+  border-style: none;
+
+	display:inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+
+}
+
+.istnanosat-button-alternate:hover, .istnanosat-button-alternate:focus, .istnanosat-button-alternate:active {
+  background-color:var(--alternate-background);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .responsive-circle {
-    position: relative;
-    border-radius: 50%;
-    width: 100%;
-    aspect-ratio: 1;
-}
-
-/* Nav bar */
-navbar {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    text-transform: uppercase;
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 /* Animations */
 .animation-bounce {
-    -moz-animation: bounce 2s infinite;
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
   
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
   40% {
-      transform: translateY(-30px);
+    transform: translateY(-30px);
   }
   60% {
-      transform: translateY(-15px);
+    transform: translateY(-15px);
   }
 }
 
@@ -111,4 +145,12 @@ navbar {
   background-repeat: no-repeat;
   background-size: cover;
   /* background-url should be specified in child object */
+}
+
+/* Nav bar */
+navbar {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
 }

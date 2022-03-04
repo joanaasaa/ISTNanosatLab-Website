@@ -1,4 +1,4 @@
-.home-section-container{
+.section-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,8 +10,9 @@
     text-align: center; /* Text is aligned with flex column axis */
 }
 
-.home-section{
-    max-width: 80vw;
+.section{
+    width: 80vw;
+    max-width: 1100px;
     margin-top: 100px;
     margin-bottom: 100px;
     margin-right: auto;
@@ -20,5 +21,5 @@
 
 #mission{
     color: white;
-    background-image: url("../resources/images/launch.jpg");
+    background-image: url("../../resources/images/launch.jpg");
 }

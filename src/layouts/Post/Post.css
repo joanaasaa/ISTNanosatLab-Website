@@ -1,0 +1,11 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Objects are (horizontally) in the center */
+
+    width: 100vw;
+
+    color: var(--text);
+    text-align: left; /* Text is aligned with flex column axis */
+}

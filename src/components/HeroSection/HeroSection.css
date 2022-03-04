@@ -1,4 +1,5 @@
-.hero-container{
+.hero-background{
+  /* Should be the size of the entire screen */
   height: 100vh;
   width: 100vw;
 
@@ -6,12 +7,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
-  
+}
+
+.hero-container {
   text-align: center;
   color: white;
-
-  background-image: url("../resources/images/cover.jpg");
 }
 
 .hero-container h1 {

@@ -1,17 +1,17 @@
 import React from "react";
 
-import "../style.css";
-import "./HomeSection.css";
+import "../../style.css";
+import "./Section.css";
 
-function HomeSection(props) {
-  var classes = "home-section-container";
+function Section(props) {
+  var classes = "section-container";
   if (props.classes) {
     classes = props.classes + " " + classes;
   }
 
   return (
     <div id={props.id} className={classes}>
-      <div className="home-section">
+      <div className="section">
         <h3>{props.subtitle}</h3>
         <h2>{props.title}</h2>
         {props.children}
@@ -20,4 +20,4 @@ function HomeSection(props) {
   );
 }
 
-export default HomeSection;
+export default Section;

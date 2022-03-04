@@ -1,7 +1,26 @@
-.esa-logo-background{
-    background-color: var(--transparent-white);
+.istsat-logo{
+  width: 30vw;
+  max-width: 200px;
+  height: auto;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center
+.esa-logo-background{
+  background-color: var(--transparent-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.esa-logo{
+  width: 100%;
+  height: auto;
+}
+
+.mission-text-container{
+  background-color: var(--transparent-white);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
 }
