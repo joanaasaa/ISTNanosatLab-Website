@@ -26,6 +26,16 @@ function ESALogoContainer(props) {
   );
 }
 
+function PartnerContainer(props) {
+  return (
+    <div className="partner_container">
+      <a href={props.url}>
+        <img src={props.src} alt={props.alt} className="esa-logo" />
+      </a>
+    </div>
+  );
+}
+
 export const MissionText = styled.p`
   text-align: left;
 `;
@@ -167,6 +177,11 @@ export default function Home() {
           the purpose of serving as an ADS-B support satellite.
         </p>
       </Section>
+      <Section
+        id="partners"
+        title="Our partners"
+        subtitle="Partners & Sponsors"
+      ></Section>
     </>
   );
 }

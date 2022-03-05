@@ -24,3 +24,12 @@
   flex-direction: column;
   padding: 5%;
 }
+
+.partner_container{
+  background-color: var(--alternate-backgound);
+  padding: 5%;
+}
+
+.partner_container:hover{
+  background-color: var(--alternate-backgound-darker);
+}
