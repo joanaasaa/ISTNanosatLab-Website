@@ -9,8 +9,8 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import Section from "../../layouts/Section/Section";
 
 import istsat1_logo from "../../resources/images/logos/istsat/logo.png";
-import esa_logo from "../../resources/images/logos/esa/esa_logo_white.png";
-import fys_logo from "../../resources/images/logos/esa/fys_logo_white.png";
+import esa_logo from "../../resources/images/logos/esa/esa_logo.png";
+import fys_logo from "../../resources/images/logos/esa/fys_logo.png";
 import activespace_logo from "../../resources/images/logos/sponsors/activespace.png";
 import amrad_logo from "../../resources/images/logos/sponsors/amrad.png";
 import anacom_logo from "../../resources/images/logos/sponsors/anacom.png";
@@ -34,18 +34,20 @@ export const Logo = styled.img`
 function ESALogoContainer(props) {
   return (
     <a href={props.url}>
-      <img src={props.src} alt={props.alt} className="esa-logo" />
+      <div className="esa-logo-container responsive-circle">
+        <img src={props.src} alt={props.alt} className="esa-logo" />
+      </div>
     </a>
   );
 }
 
-function PartnerContainer(props) {
+function SponsorContainer(props) {
   return (
-    <div className="sponsor-container">
-      <a href={props.url}>
+    <a href={props.url}>
+      <div className="sponsor-container">
         <img src={props.src} alt={props.alt} className="sponsor-logo" />
-      </a>
-    </div>
+      </div>
+    </a>
   );
 }
 
@@ -126,7 +128,7 @@ function SponsorsAndPartners(props) {
   ];
   const sponsorsList = sponsors.map((sponsor) => (
     <Grid item xs={12} sm={6} md={4}>
-      <PartnerContainer
+      <SponsorContainer
         src={sponsor.logoSrc}
         alt={sponsor.logoAlt}
         url={sponsor.url}
@@ -272,10 +274,10 @@ export default function Home() {
                 ground stations can’t reach, like oceans, deserts or mountains!
               </MissionText>
               <MissionText>
-                There are satellites already working for Air Traffic Control
-                (ATC) but they are few, mainly due to cost and complexity. This
-                is what’s different for ADS-B: It’s simple and cheap! Therefore,
-                there can be enough stallites to accomplish world-wide coverage.
+                There are already satellites working to provide a space
+                component to the ADS-B system. Aieron’s Iridium Constellation is
+                made up of 66 Low-Earth Orbit (LEO) satellites which provide
+                ADS-B worldwide coverage.
               </MissionText>
             </div>
           </Grid>
