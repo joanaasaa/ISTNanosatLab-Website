@@ -3,14 +3,27 @@ import { Grid } from "@mui/material";
 import styled from "styled-components";
 
 import "../../style.scss";
-import "./Home.css";
+import "./Home.scss";
 
 import HeroSection from "../../components/HeroSection/HeroSection";
 import Section from "../../layouts/Section/Section";
 
-import logo from "../../resources/images/logos/istsat/logo.png";
+import istsat1_logo from "../../resources/images/logos/istsat/logo.png";
 import esa_logo from "../../resources/images/logos/esa/esa_logo_white.png";
 import fys_logo from "../../resources/images/logos/esa/fys_logo_white.png";
+import activespace_logo from "../../resources/images/logos/sponsors/activespace.png";
+import amrad_logo from "../../resources/images/logos/sponsors/amrad.png";
+import anacom_logo from "../../resources/images/logos/sponsors/anacom.png";
+import cgd_logo from "../../resources/images/logos/sponsors/cgd.png";
+import dorbit_logo from "../../resources/images/logos/sponsors/dorbit.png";
+import fernando_logo from "../../resources/images/logos/sponsors/fernando_ferro_e_irmao.png";
+import inesc_logo from "../../resources/images/logos/sponsors/inesc.png";
+import ipq_logo from "../../resources/images/logos/sponsors/ipq.png";
+import ist_logo from "../../resources/images/logos/sponsors/ist.png";
+import it_logo from "../../resources/images/logos/sponsors/it.png";
+import lusospace_logo from "../../resources/images/logos/sponsors/lusospace.png";
+import nav_logo from "../../resources/images/logos/partners/nav.png";
+import primetec_logo from "../../resources/images/logos/sponsors/primetec.png";
 
 export const Logo = styled.img`
   width: 30vw;
@@ -28,11 +41,111 @@ function ESALogoContainer(props) {
 
 function PartnerContainer(props) {
   return (
-    <div className="partner_container">
+    <div className="sponsor-container">
       <a href={props.url}>
-        <img src={props.src} alt={props.alt} className="esa-logo" />
+        <img src={props.src} alt={props.alt} className="sponsor-logo" />
       </a>
     </div>
+  );
+}
+
+function SponsorsAndPartners(props) {
+  const sponsors = [
+    {
+      id: "ist",
+      logoSrc: ist_logo,
+      logoAlt: "IST logo",
+      url: "https://tecnico.ulisboa.pt/",
+    },
+    {
+      id: "inesc",
+      logoSrc: inesc_logo,
+      logoAlt: "INESC-ID logo",
+      url: "https://www.inesc-id.pt/",
+    },
+    {
+      id: "it",
+      logoSrc: it_logo,
+      logoAlt: "IT logo",
+      url: "https://www.it.pt/",
+    },
+    {
+      id: "amrad",
+      logoSrc: amrad_logo,
+      logoAlt: "AMRAD logo",
+      url: "http://www.amrad.pt/",
+    },
+    {
+      id: "anacom",
+      logoSrc: cgd_logo,
+      logoAlt: "CGD logo",
+      url: "https://www.cgd.pt/",
+    },
+    {
+      id: "cgd",
+      logoSrc: anacom_logo,
+      logoAlt: "ANCOM logo",
+      url: "https://www.anacom.pt/",
+    },
+    {
+      id: "dorbit",
+      logoSrc: dorbit_logo,
+      logoAlt: "D-Orbit logo",
+      url: "https://www.dorbit.space/",
+    },
+    {
+      id: "activespace",
+      logoSrc: activespace_logo,
+      logoAlt: "Activespace logo",
+      url: "https://www.activespacetech.com/",
+    },
+    {
+      id: "primetec",
+      logoSrc: primetec_logo,
+      logoAlt: "Primetec logo",
+      url: "https://primetec.pt/",
+    },
+    {
+      id: "ipq",
+      logoSrc: ipq_logo,
+      logoAlt: "IPQ logo",
+      url: "http://www1.ipq.pt/PT/Pages/Homepage.aspx",
+    },
+    {
+      id: "fernando",
+      logoSrc: fernando_logo,
+      logoAlt: "Fernando Ferro & Irmão, Lda logo",
+      url: "https://www.m-tec.pt/",
+    },
+    {
+      id: "lusospace",
+      logoSrc: lusospace_logo,
+      logoAlt: "LusoSpace logo",
+      url: "https://www.lusospace.com/",
+    },
+  ];
+  const sponsorsList = sponsors.map((sponsor) => (
+    <Grid item xs={12} sm={6} md={4}>
+      <PartnerContainer
+        src={sponsor.logoSrc}
+        alt={sponsor.logoAlt}
+        url={sponsor.url}
+      />
+    </Grid>
+  ));
+
+  const partners = {
+    nav: {
+      logoSrc: { nav_logo },
+      logoAlt: "NAV logo",
+      url: "https://nav.pt/",
+    },
+  };
+
+  return (
+    <Grid container justifyContent="center" alignItems="center" spacing={2}>
+      {sponsorsList}
+    </Grid>
   );
 }
 
@@ -45,7 +158,7 @@ export default function Home() {
     <>
       <HeroSection />
       <Section id="about" title="What is ISTSat-1?" subtitle="About Us">
-        <img src={logo} alt="ISTSat-1 logo" className="istsat-logo" />
+        <img src={istsat1_logo} alt="ISTSat-1 logo" className="istsat-logo" />
         <p>
           ISTSat-1 is a 1U CubeSat and will be the first Portuguese CubeSat to
           be launched into space!
@@ -181,7 +294,9 @@ export default function Home() {
         id="partners"
         title="Our partners"
         subtitle="Partners & Sponsors"
-      ></Section>
+      >
+        <SponsorsAndPartners />
+      </Section>
     </>
   );
 }

@@ -1,0 +1,48 @@
+.istsat-logo {
+  width: 30vw;
+  max-width: 200px;
+  height: auto;
+}
+
+.esa-logo {
+  width: 100%;
+  height: auto;
+
+  &-background {
+    background-color: var(--transparent-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mission-text-container {
+  background-color: var(--transparent-white);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.sponsor {
+  &-container {
+    background-color: var(--alternate-background);
+    height: 100px;
+    width: auto;
+    padding: 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: var(--alternate-background-darker);
+    }
+  }
+
+  &-logo {
+    max-height: 100px;
+    max-width: 80%;
+  }
+}
