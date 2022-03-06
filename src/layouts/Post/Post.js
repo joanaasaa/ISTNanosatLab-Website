@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../../style.css";
-import "../Section/Section.css";
+import "../../style.scss";
+import "./Post.css";
 import PostTitleSection from "../../components/PostTitleSection/PostTitleSection";
 
 export default function Post(props) {

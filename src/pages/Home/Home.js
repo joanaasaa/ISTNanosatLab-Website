@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import styled from "styled-components";
 
-import "../../style.css";
+import "../../style.scss";
 import "./Home.css";
 
 import HeroSection from "../../components/HeroSection/HeroSection";

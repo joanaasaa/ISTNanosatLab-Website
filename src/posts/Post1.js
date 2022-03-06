@@ -1,7 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 
-import "../style.css";
+import "../style.scss";
 import "../layouts/Post/Post";
 import Post from "../layouts/Post/Post";
 

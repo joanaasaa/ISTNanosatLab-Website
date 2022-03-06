@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import "../../style.css";
+import "../../style.scss";
 import "../../layouts/Section/Section.css";
-import "./PostTitleSection.css";
+import "./PostTitleSection.scss";
 
 const PostTitleBackground = styled.div.attrs((props) => ({
   className: props.className,
@@ -12,6 +12,7 @@ const PostTitleBackground = styled.div.attrs((props) => ({
   background-image: url(${(props) => props.backgroundSrc});
 `;
 
+// TODO Chnage button links.
 function PostTitleSection(props) {
   return (
     <PostTitleBackground
@@ -20,7 +21,7 @@ function PostTitleSection(props) {
     >
       <div className="post-title-container">
         <h1>{props.title}</h1>
-        <Link to="/ #news">
+        <Link to="/#news">
           <button className="istnanosat-button-alternate">
             Back to news feed
           </button>

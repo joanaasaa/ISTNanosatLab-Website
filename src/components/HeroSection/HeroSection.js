@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import hero_background from "../../resources/images/cover.jpg";
 
-import "../../style.css";
+import "../../style.scss";
 import "./HeroSection.css";
 import "../../layouts/Section/Section.css";
 
