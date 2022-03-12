@@ -14,7 +14,7 @@ function Section(props) {
       <div className="section">
         <h3>{props.subtitle}</h3>
         <h2>{props.title}</h2>
-        {props.children}
+        <div>{props.children}</div>
       </div>
     </div>
   );

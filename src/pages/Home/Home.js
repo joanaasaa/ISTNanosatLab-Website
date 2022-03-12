@@ -2,6 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import styled from "styled-components";
 
+import { ISTSat1Button } from "../../style";
 import "../../style.scss";
 import "./Home.scss";
 
@@ -11,24 +12,32 @@ import Section from "../../layouts/Section/Section";
 import istsat1_logo from "../../resources/images/logos/istsat/logo.png";
 import esa_logo from "../../resources/images/logos/esa/esa_logo.png";
 import fys_logo from "../../resources/images/logos/esa/fys_logo.png";
-import activespace_logo from "../../resources/images/logos/sponsors/activespace.png";
-import amrad_logo from "../../resources/images/logos/sponsors/amrad.png";
-import anacom_logo from "../../resources/images/logos/sponsors/anacom.png";
-import cgd_logo from "../../resources/images/logos/sponsors/cgd.png";
-import dorbit_logo from "../../resources/images/logos/sponsors/dorbit.png";
-import fernando_logo from "../../resources/images/logos/sponsors/fernando_ferro_e_irmao.png";
-import inesc_logo from "../../resources/images/logos/sponsors/inesc.png";
-import ipq_logo from "../../resources/images/logos/sponsors/ipq.png";
-import ist_logo from "../../resources/images/logos/sponsors/ist.png";
-import it_logo from "../../resources/images/logos/sponsors/it.png";
-import lusospace_logo from "../../resources/images/logos/sponsors/lusospace.png";
-import nav_logo from "../../resources/images/logos/partners/nav.png";
-import primetec_logo from "../../resources/images/logos/sponsors/primetec.png";
+import activespace_logo from "../../resources/images/logos/activespace.png";
+import amrad_logo from "../../resources/images/logos/amrad.png";
+import anacom_logo from "../../resources/images/logos/anacom.png";
+import cgd_logo from "../../resources/images/logos/cgd.png";
+import dorbit_logo from "../../resources/images/logos/dorbit.png";
+import fernando_logo from "../../resources/images/logos/fernando_ferro_e_irmao.png";
+import inesc_logo from "../../resources/images/logos/inesc.png";
+import ipq_logo from "../../resources/images/logos/ipq.png";
+import ist_logo from "../../resources/images/logos/ist.png";
+import it_logo from "../../resources/images/logos/it.png";
+import lusospace_logo from "../../resources/images/logos/lusospace.png";
+import primetec_logo from "../../resources/images/logos/primetec.png";
+import nav_logo from "../../resources/images/logos/nav.png";
+
+// NOTE Don't use words like "sponsor" when naming CSS classes or JS variables.
+// Ad blockers look for these types of names to block content. This was happening
+// to our sponsors' logos.
 
 export const Logo = styled.img`
   width: 30vw;
   max-width: 200px;
   height: auto;
+`;
+
+export const MissionText = styled.p`
+  text-align: left;
 `;
 
 function ESALogoContainer(props) {
@@ -41,119 +50,145 @@ function ESALogoContainer(props) {
   );
 }
 
-function SponsorContainer(props) {
+function SsAndPsLogoContainer(props) {
   return (
-    <a href={props.url}>
-      <div className="sponsor-container">
-        <img src={props.src} alt={props.alt} className="sponsor-logo" />
+    <a href={props.url} target="_blank" rel="noreferrer">
+      <div className="s-container">
+        <img src={props.src} alt={props.alt} className="s-logo" />
       </div>
     </a>
   );
 }
 
-function SponsorsAndPartners(props) {
-  const sponsors = [
+function Ss(props) {
+  const Ss = [
     {
-      id: "ist",
       logoSrc: ist_logo,
       logoAlt: "IST logo",
       url: "https://tecnico.ulisboa.pt/",
     },
     {
-      id: "inesc",
       logoSrc: inesc_logo,
       logoAlt: "INESC-ID logo",
       url: "https://www.inesc-id.pt/",
     },
     {
-      id: "it",
       logoSrc: it_logo,
       logoAlt: "IT logo",
       url: "https://www.it.pt/",
     },
     {
-      id: "amrad",
       logoSrc: amrad_logo,
       logoAlt: "AMRAD logo",
       url: "http://www.amrad.pt/",
     },
     {
-      id: "anacom",
       logoSrc: cgd_logo,
       logoAlt: "CGD logo",
       url: "https://www.cgd.pt/",
     },
     {
-      id: "cgd",
       logoSrc: anacom_logo,
       logoAlt: "ANCOM logo",
       url: "https://www.anacom.pt/",
     },
     {
-      id: "dorbit",
       logoSrc: dorbit_logo,
       logoAlt: "D-Orbit logo",
       url: "https://www.dorbit.space/",
     },
     {
-      id: "activespace",
       logoSrc: activespace_logo,
       logoAlt: "Activespace logo",
       url: "https://www.activespacetech.com/",
     },
     {
-      id: "primetec",
       logoSrc: primetec_logo,
       logoAlt: "Primetec logo",
       url: "https://primetec.pt/",
     },
     {
-      id: "ipq",
       logoSrc: ipq_logo,
       logoAlt: "IPQ logo",
       url: "http://www1.ipq.pt/PT/Pages/Homepage.aspx",
     },
     {
-      id: "fernando",
       logoSrc: fernando_logo,
       logoAlt: "Fernando Ferro & Irmão, Lda logo",
       url: "https://www.m-tec.pt/",
     },
     {
-      id: "lusospace",
       logoSrc: lusospace_logo,
       logoAlt: "LusoSpace logo",
       url: "https://www.lusospace.com/",
     },
   ];
-  const sponsorsList = sponsors.map((sponsor) => (
+
+  const SsList = Ss.map((_s) => (
     <Grid item xs={12} sm={6} md={4}>
-      <SponsorContainer
-        src={sponsor.logoSrc}
-        alt={sponsor.logoAlt}
-        url={sponsor.url}
-      />
+      <SsAndPsLogoContainer src={_s.logoSrc} alt={_s.logoAlt} url={_s.url} />
     </Grid>
   ));
 
-  const partners = {
-    nav: {
-      logoSrc: { nav_logo },
-      logoAlt: "NAV logo",
-      url: "https://nav.pt/",
-    },
-  };
-
   return (
-    <Grid container justifyContent="center" alignItems="center" spacing={2}>
-      {sponsorsList}
-    </Grid>
+    <div className="s-grid-container">
+      <Grid container justifyContent="center" alignItems="center" spacing={2}>
+        {SsList}
+      </Grid>
+    </div>
   );
 }
 
-export const MissionText = styled.p`
-  text-align: left;
-`;
+function Ps(props) {
+  const Ps = [
+    {
+      logoSrc: nav_logo,
+      logoAlt: "NAV logo",
+      url: "https://nav.pt/",
+    },
+  ];
+
+  const PsList = Ps.map((_p) => (
+    <Grid item xs={12} sm={6} md={4}>
+      <SsAndPsLogoContainer src={_p.logoSrc} alt={_p.logoAlt} url={_p.url} />
+    </Grid>
+  ));
+
+  return (
+    <div className="s-grid-container">
+      <Grid container justifyContent="center" alignItems="center" spacing={2}>
+        {PsList}
+      </Grid>
+    </div>
+  );
+}
+
+function SocialMedia(props) {
+  const id = "social-".concat(props.network);
+  const iconClass = "fa-brands fa-5x fa-".concat(props.network);
+  const buttonType = props.network;
+  const buttonText = "Follow us on ".concat(props.network);
+
+  var url;
+  if (props.network == "facebook") url = "https://www.facebook.com/istsatone";
+  if (props.network == "instagram")
+    url = "https://www.instagram.com/istsat_one/";
+  if (props.network == "twitter") url = "https://twitter.com/istsat_one";
+
+  return (
+    <div style={{ marginTop: "30px", marginBotton: "30px" }}>
+      <div>
+        <i id={id} class={iconClass}></i>
+      </div>
+      <ISTSat1Button
+        buttonType={buttonType}
+        url={url}
+        target="_blank"
+        text={buttonText}
+      />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -293,11 +328,25 @@ export default function Home() {
         </p>
       </Section>
       <Section
-        id="partners"
-        title="Our partners"
-        subtitle="Partners & Sponsors"
+        id="sponsors_partners"
+        title="Our sponsors"
+        subtitle="Sponsors & Partners"
       >
-        <SponsorsAndPartners />
+        <Ss />
+        <h2>Our partners</h2>
+        <Ps />
+        <p>Are you interested in sponsoring or partnering with our project?</p>
+        <ISTSat1Button url="https://tecnico.ulisboa.pt/" text="Get in touch!" />
+      </Section>
+      <Section
+        id="social-media"
+        title="Our social media"
+        subtitle="Keep up with us"
+        classes="image-background"
+      >
+        <SocialMedia network="twitter" />
+        <SocialMedia network="instagram" />
+        <SocialMedia network="facebook" />
       </Section>
     </>
   );

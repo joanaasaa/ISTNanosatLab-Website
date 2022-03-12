@@ -30,7 +30,14 @@
   padding: 5%;
 }
 
-.sponsor {
+// s from "sponsor". Dont't rename this class as Ad blockers look
+//for these types of keywords to block content.
+.s {
+  &-grid-container {
+    padding-top: 5px;
+    padding-bottom: 25px;
+  }
+
   &-container {
     background-color: var(--alternate-background);
     height: 100px;
@@ -47,7 +54,19 @@
   }
 
   &-logo {
-    max-height: 100px;
+    max-height: 85px;
     max-width: 80%;
+  }
+}
+
+#social {
+  &-facebook {
+    color: var(--facebook);
+  }
+  &-instagram {
+    color: var(--instagram);
+  }
+  &-twitter {
+    color: var(--twitter);
   }
 }

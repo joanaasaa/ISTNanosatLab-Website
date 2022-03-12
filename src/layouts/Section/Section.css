@@ -1,25 +1,30 @@
-.section-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Objects are (horizontally) in the center */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Objects are (horizontally) in the center */
 
-    width: 100vw;
+  width: 100vw;
 
-    color: var(--text);
-    text-align: center; /* Text is aligned with flex column axis */
+  color: var(--text);
+  text-align: center; /* Text is aligned with flex column axis */
 }
 
-.section{
-    width: 80vw;
-    max-width: 1100px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: auto;
-    margin-left: auto;
+.section {
+  width: 80vw;
+  max-width: 1100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#mission{
-    color: white;
-    background-image: url("../../resources/images/launch.jpg");
+#mission {
+  color: white;
+  background-image: url("../../resources/images/launch.jpg");
+}
+
+#social-media {
+  color: white;
+  background-image: url("../../resources/images/social_media.jpg");
 }

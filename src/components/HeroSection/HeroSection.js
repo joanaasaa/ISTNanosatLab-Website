@@ -20,12 +20,11 @@ function HeroSection() {
       <div className="section hero-container">
         <h1>ISTSat-1</h1>
         <h3>The First Portuguese CubeSat</h3>
-        <a href="#about">
-          <i
-            id="arrow"
-            class="fa-solid fa-arrow-down fa-2xl  animation-bounce"
-          ></i>
-        </a>
+        <div className="animation-bounce">
+          <a href="#about">
+            <i id="arrow" class="fa-solid fa-arrow-down fa-2xl"></i>
+          </a>
+        </div>
       </div>
     </HeroBackground>
   );
