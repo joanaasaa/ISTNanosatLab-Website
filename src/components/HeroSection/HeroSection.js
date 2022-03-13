@@ -14,19 +14,21 @@ const HeroBackground = styled.div.attrs((props) => ({
   background-image: url(${hero_background});
 `;
 
-function HeroSection() {
+function HeroSection(props) {
   return (
-    <HeroBackground className="image-background hero-background">
-      <div className="section hero-container">
-        <h1>ISTSat-1</h1>
-        <h3>The First Portuguese CubeSat</h3>
-        <div className="animation-bounce">
-          <a href="#about">
-            <i id="arrow" class="fa-solid fa-arrow-down fa-2xl"></i>
-          </a>
+    <div id={props.id}>
+      <HeroBackground className="image-background hero-background">
+        <div className="section hero-container">
+          <h1>ISTSat-1</h1>
+          <h3>The First Portuguese CubeSat</h3>
+          <div className="animation-bounce">
+            <a href="#about">
+              <i id="arrow" class="fa-solid fa-arrow-down fa-2xl"></i>
+            </a>
+          </div>
         </div>
-      </div>
-    </HeroBackground>
+      </HeroBackground>
+    </div>
   );
 }
 

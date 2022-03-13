@@ -42,7 +42,7 @@ export const MissionText = styled.p`
 
 function ESALogoContainer(props) {
   return (
-    <a href={props.url}>
+    <a href={props.url} target="_blank" rel="noreferrer">
       <div className="esa-logo-container responsive-circle">
         <img src={props.src} alt={props.alt} className="esa-logo" />
       </div>
@@ -170,10 +170,10 @@ function SocialMedia(props) {
   const buttonText = "Follow us on ".concat(props.network);
 
   var url;
-  if (props.network == "facebook") url = "https://www.facebook.com/istsatone";
-  if (props.network == "instagram")
+  if (props.network === "facebook") url = "https://www.facebook.com/istsatone";
+  if (props.network === "instagram")
     url = "https://www.instagram.com/istsat_one/";
-  if (props.network == "twitter") url = "https://twitter.com/istsat_one";
+  if (props.network === "twitter") url = "https://twitter.com/istsat_one";
 
   return (
     <div style={{ marginTop: "30px", marginBotton: "30px" }}>
@@ -190,10 +190,10 @@ function SocialMedia(props) {
   );
 }
 
-export default function Home() {
+function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroSection id="hero" />
       <Section id="about" title="What is ISTSat-1?" subtitle="About Us">
         <img src={istsat1_logo} alt="ISTSat-1 logo" className="istsat-logo" />
         <p>
@@ -351,3 +351,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

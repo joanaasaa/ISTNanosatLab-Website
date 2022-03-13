@@ -37,7 +37,7 @@ h1 {
     font-size: 5rem;
   }
   // For sm screens (according to MUI breskpoints)
-  @media screen and (max-width: 900px) {
+  @media screen and (min-width: 600px) and (max-width: 900px) {
     font-size: 6rem;
   }
 
@@ -53,7 +53,7 @@ h2 {
     font-size: 2.5rem;
   }
   // For sm screens (according to MUI breskpoints)
-  @media screen and (max-width: 900px) {
+  @media screen and (min-width: 600px) and (max-width: 900px) {
     font-size: 3rem;
   }
   font-weight: 700;
@@ -64,6 +64,10 @@ h3 {
   font-size: 2.4rem;
   // For xs screens (according to MUI breskpoints)
   @media screen and (max-width: 600px) {
+    font-size: 1.7rem;
+  }
+  // For sm screens (according to MUI breskpoints)
+  @media screen and (min-width: 600px) and (max-width: 900px) {
     font-size: 2rem;
   }
   font-weight: 400;
@@ -190,12 +194,4 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover;
   /* background-url should be specified in child object */
-}
-
-/* Nav bar */
-.navbar {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
 }

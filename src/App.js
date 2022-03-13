@@ -1,17 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./style.scss";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
-import Post1 from "./posts/Post1";
+
+const theme = createTheme();
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    <>
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/team" element={<Team />} /> */}
+        </Routes>
+      </ThemeProvider>
+    </>
   );
 }
 

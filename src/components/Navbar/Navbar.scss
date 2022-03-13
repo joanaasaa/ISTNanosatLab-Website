@@ -1,0 +1,75 @@
+.navbar-container {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  position: sticky; // The element is positioned based on the user's scroll position.
+  top: 0;
+
+  width: 100vw;
+  height: 80px;
+  margin-top: -80px;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.navbar-logo {
+  max-height: 65%;
+  cursor: pointer;
+
+  &-container {
+    margin-left: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+  }
+}
+
+.navbar-links {
+  margin-right: 24px;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%text-shared {
+  text-decoration: none;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.navbar-text {
+  @extend %text-shared;
+  color: white;
+
+  &-active {
+    @extend %text-shared;
+    color: var(--primary);
+  }
+}
+
+.navbar-menu-active {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
