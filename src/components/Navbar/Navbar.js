@@ -8,7 +8,7 @@ import "../../style.scss";
 import "./Navbar.scss";
 
 import logo from "../../resources/images/logos/istsat/logo_minimalist_white.png";
-import { color } from "@mui/system";
+import logo_hamburguer from "../../resources/images/logos/istsat/logo_minimalist.png";
 
 const NavbarContainer = styled.div.attrs((props) => ({
   id: props.id,
@@ -17,7 +17,7 @@ const NavbarContainer = styled.div.attrs((props) => ({
   background: ${(props) => (props.altNavbar ? "var(--accent)" : "transparent")};
 `;
 
-const NavbarMenuActive = styled.div.attrs((props) => ({
+const NavbarHamburguerActive = styled.div.attrs((props) => ({
   className: props.className,
 }))`
   opacity: ${(props) => (props.active ? "100%" : "0%")};
@@ -43,7 +43,7 @@ const navLinks = [
   },
 ];
 
-const navLinksList = navLinks.map((link) => (
+const navLinksListRegular = navLinks.map((link) => (
   <NavLink
     className={({ isActive }) =>
       isActive ? "navbar-text-active" : "navbar-text"
@@ -54,43 +54,61 @@ const navLinksList = navLinks.map((link) => (
   </NavLink>
 ));
 
-function NavbarLinksMobile(props) {
-  const [isMenuActive, setMenuActive] = useState(false);
+const navLinksListHamburguer = navLinks.map((link) => (
+  <NavLink
+    className={({ isActive }) =>
+      isActive ? "navbar-text-hamburguer-active" : "navbar-text-hamburguer"
+    }
+    to={link.to}
+  >
+    {link.name}
+  </NavLink>
+));
 
-  var icon;
-  if (isMenuActive) icon = <i class="fa-solid fa-xmark fa-xl"></i>;
-  else icon = <i class="fa-solid fa-bars fa-xl"></i>;
+function NavbarHamburguer(props) {
+  const [isMenuActive, setMenuActive] = useState(false);
 
   return (
     <>
-      <div className="navbar-links navbar-text">
-        <div onClick={() => setMenuActive(!isMenuActive)}>{icon}</div>
-      </div>
-      <NavbarMenuActive
-        active={isMenuActive}
-        className="navbar-menu-active navbar-text"
-      >
-        <div className="navbar-links navbar-text">
-          <div onClick={() => setMenuActive(!isMenuActive)}>{icon}</div>
+      <div className="navbar-links-regular navbar-text">
+        <div onClick={() => setMenuActive(!isMenuActive)}>
+          <i class="fa-solid fa-bars fa-xl"></i>
         </div>
-        {navLinksList}
-      </NavbarMenuActive>
+      </div>
+      <NavbarHamburguerActive
+        active={isMenuActive}
+        className="navbar-menu-active"
+      >
+        <div className="navbar-icon-active navbar-text">
+          <div onClick={() => setMenuActive(!isMenuActive)}>
+            <i class="fa-solid fa-xmark fa-xl"></i>
+          </div>
+        </div>
+        <div className="navbar-links-mobile">
+          {navLinksListHamburguer}
+          <img
+            src={logo_hamburguer}
+            alt="ISTSat-1 logo"
+            className="navbar-logo-hamburguer"
+          />
+        </div>
+      </NavbarHamburguerActive>
     </>
   );
 }
 
-function NavbarLinksRegular(props) {
-  return <div className="navbar-links">{navLinksList}</div>;
+function NavbarRegular(props) {
+  return <div className="navbar-links-regular">{navLinksListRegular}</div>;
 }
 
-function NavbarLinks(props) {
+function NavbarMenu(props) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Set to true for screens smaller than 900px
 
   if (isMobile) {
-    return <NavbarLinksMobile />;
+    return <NavbarHamburguer />;
   } else {
-    return <NavbarLinksRegular />;
+    return <NavbarRegular />;
   }
 }
 
@@ -113,9 +131,13 @@ function Navbar() {
       className="navbar-container"
     >
       <a href="/#hero" className="navbar-logo-container">
-        <img src={logo} alt="ISTSat-1 logo" className="navbar-logo" />
+        <img
+          src={logo}
+          alt="ISTSat-1 minimalist logo"
+          className="navbar-logo"
+        />
       </a>
-      <NavbarLinks />
+      <NavbarMenu />
     </NavbarContainer>
   );
 }

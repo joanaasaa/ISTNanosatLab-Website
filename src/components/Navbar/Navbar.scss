@@ -17,6 +17,8 @@
   align-items: center;
 
   z-index: 1;
+
+  transition: 0.3s ease-in-out;
 }
 
 .navbar-logo {
@@ -34,13 +36,37 @@
   }
 }
 
-.navbar-links {
+.navbar-links-regular {
   margin-right: 24px;
   z-index: 10;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar-links-mobile {
+  z-index: 10;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar-icon-active {
+  position: fixed;
+  top: 30px;
+  right: 24px;
+  z-index: 10;
+}
+
+.navbar-logo-hamburguer {
+  width: 40vw;
+  height: auto;
+  max-width: 300px;
+  padding: 25px 0;
 }
 
 %text-shared {
@@ -59,16 +85,29 @@
   }
 }
 
+%text-shared-hamburguer {
+  text-decoration: none;
+  font-size: 1.9rem;
+  padding: 25px 0;
+  cursor: pointer;
+}
+
+.navbar-text-hamburguer {
+  @extend %text-shared-hamburguer;
+  color: white;
+
+  &-active {
+    @extend %text-shared-hamburguer;
+    color: var(--primary);
+  }
+}
+
 .navbar-menu-active {
   position: fixed;
   z-index: 999;
   width: 100vw;
   height: 100vh;
   background-color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   top: 0;
   left: 0;
   transition: 0.3s ease-in-out;
