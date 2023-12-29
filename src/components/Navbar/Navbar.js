@@ -7,6 +7,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import "../../style.scss";
 import "./Navbar.scss";
 
+import { nav_links } from "../../globals";
 import logo from "../../resources/images/logos/istsat/logo_minimalist_white.png";
 import logo_hamburguer from "../../resources/images/logos/istsat/logo_minimalist.png";
 
@@ -24,26 +25,7 @@ const NavbarHamburguerActive = styled.div.attrs((props) => ({
   top: ${(props) => (props.active ? "0" : "-100vh")};
 `;
 
-const navLinks = [
-  {
-    name: "Home",
-    to: "/",
-  },
-  {
-    name: "Team",
-    to: "/team",
-  },
-  {
-    name: "Publications",
-    to: "/publications",
-  },
-  {
-    name: "Contact",
-    to: "/contact",
-  },
-];
-
-const navLinksListRegular = navLinks.map((link) => (
+const navLinksListRegular = nav_links.map((link) => (
   <NavLink
     className={({ isActive }) =>
       isActive ? "navbar-text-active" : "navbar-text"
@@ -54,7 +36,7 @@ const navLinksListRegular = navLinks.map((link) => (
   </NavLink>
 ));
 
-const navLinksListHamburguer = navLinks.map((link) => (
+const navLinksListHamburguer = nav_links.map((link) => (
   <NavLink
     className={({ isActive }) =>
       isActive ? "navbar-text-hamburguer-active" : "navbar-text-hamburguer"
@@ -65,7 +47,7 @@ const navLinksListHamburguer = navLinks.map((link) => (
   </NavLink>
 ));
 
-function NavbarHamburguer(props) {
+function NavbarHamburguer() {
   const [isMenuActive, setMenuActive] = useState(false);
 
   return (
@@ -97,11 +79,11 @@ function NavbarHamburguer(props) {
   );
 }
 
-function NavbarRegular(props) {
+function NavbarRegular() {
   return <div className="navbar-links-regular">{navLinksListRegular}</div>;
 }
 
-function NavbarMenu(props) {
+function NavbarMenu() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Set to true for screens smaller than 900px
 

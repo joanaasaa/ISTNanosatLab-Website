@@ -30,8 +30,8 @@
   padding: 5%;
 }
 
-// s from "sponsor". Dont't rename this class as Ad blockers look
-//for these types of keywords to block content.
+// NOTE: s from "sponsor". Don't use this names since Ad blockers look for these
+// types of keywords to block content.
 .s {
   &-grid-container {
     padding-top: 5px;

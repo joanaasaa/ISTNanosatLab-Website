@@ -6,6 +6,8 @@ import { ISTSat1Button } from "../../style";
 import "../../style.scss";
 import "./Home.scss";
 
+import { istsat1_urls } from "../../globals";
+
 import HeroSection from "../../components/HeroSection/HeroSection";
 import Section from "../../layouts/Section/Section";
 
@@ -169,12 +171,6 @@ function SocialMedia(props) {
   const buttonType = props.network;
   const buttonText = "Follow us on ".concat(props.network);
 
-  var url;
-  if (props.network === "facebook") url = "https://www.facebook.com/istsatone";
-  if (props.network === "instagram")
-    url = "https://www.instagram.com/istsat_one/";
-  if (props.network === "twitter") url = "https://twitter.com/istsat_one";
-
   return (
     <div style={{ marginTop: "30px", marginBotton: "30px" }}>
       <div>
@@ -182,7 +178,7 @@ function SocialMedia(props) {
       </div>
       <ISTSat1Button
         buttonType={buttonType}
-        url={url}
+        url={istsat1_urls[props.network]}
         target="_blank"
         text={buttonText}
       />
@@ -201,12 +197,12 @@ function Home() {
           be launched into space!
         </p>
         <p>
-          It’s being developed by the ISTNanosat team which is made up of
-          students and teachers from University of Lisbon’s Instituto Superior
-          Técnico, working out of Técnico’s Taguspark campus.
+          It's being developed by the ISTNanosat team which is made up of
+          students and teachers from University of Lisbon's Instituto Superior
+          Técnico, working out of Técnico's Taguspark campus.
         </p>
         <p>
-          ISTSat-1 is a nanosatellite being developed under ESA’s Fly Your
+          ISTSat-1 is a nanosatellite being developed under ESA's Fly Your
           Satellite! program. ISTSat-1 is scheduled to be launched in 2021.
         </p>
       </Section>
@@ -217,7 +213,7 @@ function Home() {
         classes="image-background"
       >
         <p>
-          ISTSat-1’s main goal is to provide students with an interesting and
+          ISTSat-1's main goal is to provide students with an interesting and
           challenging experience in order too foster enthusiasm for space,
           science and technology.
         </p>
@@ -245,7 +241,7 @@ function Home() {
         </Grid>
         <p>
           Developing ISTSat-1 to be a CubeSat was an important decision since it
-          allowed us to apply to ESA’s Fly Your Satellite! program. Being
+          allowed us to apply to ESA's Fly Your Satellite! program. Being
           accepted to the program in March 2017 was a very important milestone
           for the team since it meant we could fulfill our most ambitious goal:
           Launch ISTSat-1 into space!
@@ -263,7 +259,7 @@ function Home() {
         </p>
         <p>
           Even though all FYS participants have the same goal, to launch the
-          developed satellite, they each get to decide their CubeSats’ mission…
+          developed satellite, they each get to decide their CubeSats' mission…
         </p>
         <h2>What is ADS-B?</h2>
         <p>
@@ -271,7 +267,7 @@ function Home() {
           aircraft survaillance system designed to compliment the Primary
           Survaillance Radar (PSR) and, in a near future, replace the Secondary
           Surveillance Radar (SSR). Its main purpose, much like SSR, is to
-          control aircrafts’ statuses, like velocity and altitude, around the
+          control aircrafts' statuses, like velocity and altitude, around the
           world.
         </p>
         <Grid
@@ -288,7 +284,7 @@ function Home() {
                 It has many advantages! Firstly, messages are not encrypted and,
                 therefore, available to everyone. Another advantage is that the
                 aircraft information can be received without an interrogation
-                signal, it’s always being broadcasted (nevertheless,
+                signal, it's always being broadcasted (nevertheless,
                 interrogations are still possible). Additionally, the ADS-B
                 system is built so that not only ground stations but also pilots
                 have this information available in real-time.
@@ -298,7 +294,7 @@ function Home() {
           <Grid item xs={12} md={6}>
             <div className="mission-text-container">
               <h2>
-                What does it have that others don’t to accomplish world-wide
+                What does it have that others don't to accomplish world-wide
                 coverage?
               </h2>
               <MissionText>
@@ -306,11 +302,11 @@ function Home() {
                 will aircrafts and ground stations broadcast and re-transmit
                 ADS-B messages, but also satellites. This means that these will
                 relay messages sent by aircrafts in order to cover areas which
-                ground stations can’t reach, like oceans, deserts or mountains!
+                ground stations can't reach, like oceans, deserts or mountains!
               </MissionText>
               <MissionText>
                 There are already satellites working to provide a space
-                component to the ADS-B system. Aieron’s Iridium Constellation is
+                component to the ADS-B system. Aieron's Iridium Constellation is
                 made up of 66 Low-Earth Orbit (LEO) satellites which provide
                 ADS-B worldwide coverage.
               </MissionText>
@@ -319,7 +315,7 @@ function Home() {
         </Grid>
         <h2>So what's the mission?</h2>
         <p>
-          ISTSat-1’s purpose will be to carry out a feasibility study for the
+          ISTSat-1's purpose will be to carry out a feasibility study for the
           use of nanosatellites, namelty CubeSats, to receive ADS-B signals in
           areas that are covered by terrestrial stations. CubeSats are very
           simple and cheap when compared to the classical satellite, so our

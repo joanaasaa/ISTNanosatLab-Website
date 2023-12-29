@@ -87,9 +87,51 @@ h4 {
   }
 }
 
+/* Animations */
+.animation-bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.animation-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+  &:hover,
+  &:focus,
+  &:active {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
 /* Shapes */
 .istsat-button {
   @extend h4;
+  @extend .animation-shrink;
   color: white;
 
   text-align: center;
@@ -109,21 +151,10 @@ h4 {
     padding: 10px 25px;
   }
 
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-
   &:hover,
   &:focus,
   &:active {
     background-color: var(--accent);
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
   }
 
   &-alternate {
@@ -177,29 +208,6 @@ h4 {
   border-radius: 50%;
   height: 100%;
   aspect-ratio: 1;
-}
-
-/* Animations */
-.animation-bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
 }
 
 /* Background */
