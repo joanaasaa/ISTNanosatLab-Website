@@ -5,21 +5,38 @@ export const istsat1_urls = {
   twitter: "https://twitter.com/istsat_one",
 };
 
-export const nav_links = [
+export const navbar_entries = [
   {
     name: "Home",
     to: "/",
+    dropdown: false,
+    dropdown_children: [],
   },
   {
-    name: "Team",
-    to: "/team",
+    name: "About",
+    to: "/about",
+    dropdown: false,
+    dropdown_children: [],
+  },
+  {
+    name: "Projects",
+    to: "",
+    dropdown: true,
+    dropdown_children: [
+      {
+        name: "Project 1",
+        to: "/projects/project1",
+      },
+      {
+        name: "Project 2",
+        to: "/projects/project2",
+      },
+    ],
   },
   {
     name: "Publications",
     to: "/publications",
-  },
-  {
-    name: "Contact",
-    to: "/contact",
+    dropdown: false,
+    dropdown_children: [],
   },
 ];

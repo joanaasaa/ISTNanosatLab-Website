@@ -7,7 +7,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import "../../style.scss";
 import "./Navbar.scss";
 
-import { nav_links } from "../../globals";
+import { navbar_entries } from "../../globals";
 import logo from "../../resources/images/logos/istsat/logo_minimalist_white.png";
 import logo_hamburguer from "../../resources/images/logos/istsat/logo_minimalist.png";
 
@@ -15,7 +15,8 @@ const NavbarContainer = styled.div.attrs((props) => ({
   id: props.id,
   className: props.className,
 }))`
-  background: ${(props) => (props.altNavbar ? "var(--accent)" : "transparent")};
+  background: ${(props) =>
+    props.opaqueNavbar ? "var(--accent)" : "transparent"};
 `;
 
 const NavbarHamburguerActive = styled.div.attrs((props) => ({
@@ -25,31 +26,46 @@ const NavbarHamburguerActive = styled.div.attrs((props) => ({
   top: ${(props) => (props.active ? "0" : "-100vh")};
 `;
 
-const navLinksListRegular = nav_links.map((link) => (
-  <NavLink
-    className={({ isActive }) =>
-      isActive ? "navbar-text-active" : "navbar-text"
-    }
-    to={link.to}
-  >
-    {link.name}
-  </NavLink>
-));
+function NavbarEntry(props) {
+  if (props.to === "") {
+    return <p className={props.inactiveClass}>{props.name}</p>;
+  } else {
+    return (
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? props.activeClass : props.inactiveClass
+        }
+        to={props.to}
+      >
+        {props.name}
+      </NavLink>
+    );
+  }
+}
 
-const navLinksListHamburguer = nav_links.map((link) => (
-  <NavLink
-    className={({ isActive }) =>
-      isActive ? "navbar-text-hamburguer-active" : "navbar-text-hamburguer"
-    }
-    to={link.to}
-  >
-    {link.name}
-  </NavLink>
-));
+function NavbarEntries(props) {
+  const menu = navbar_entries.map((entry) => (
+    <NavbarEntry
+      activeClass={
+        props.isHamburguer
+          ? "navbar-text-hamburguer-active"
+          : "navbar-text-active"
+      }
+      inactiveClass={
+        props.isHamburguer ? "navbar-text-hamburguer" : "navbar-text"
+      }
+      to={entry.to}
+      name={entry.name}
+    />
+  ));
+
+  return <div className={props.class}>{menu}</div>;
+}
 
 function NavbarHamburguer() {
   const [isMenuActive, setMenuActive] = useState(false);
 
+  // On hamburgue click (isMenuActive=true), activate menu.
   return (
     <>
       <div className="navbar-links-regular navbar-text">
@@ -66,27 +82,27 @@ function NavbarHamburguer() {
             <i class="fa-solid fa-xmark fa-xl"></i>
           </div>
         </div>
-        <div className="navbar-links-mobile">
-          {navLinksListHamburguer}
-          <img
-            src={logo_hamburguer}
-            alt="ISTSat-1 logo"
-            className="navbar-logo-hamburguer"
-          />
-        </div>
+        <NavbarEntries class="navbar-links-mobile" isHamburguer={true} />
+        {/* <img
+          src={logo_hamburguer}
+          alt="ISTSat-1 logo"
+          className="navbar-logo-hamburguer"
+        /> */}
       </NavbarHamburguerActive>
     </>
   );
 }
 
 function NavbarRegular() {
-  return <div className="navbar-links-regular">{navLinksListRegular}</div>;
+  return <NavbarEntries class="navbar-links-regular" isHamburguer={false} />;
 }
 
 function NavbarMenu() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Set to true for screens smaller than 900px
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  // The navbar menu turns hamburguer style for screens smaller than 900px
+  // (aka. sm).
   if (isMobile) {
     return <NavbarHamburguer />;
   } else {
@@ -95,13 +111,14 @@ function NavbarMenu() {
 }
 
 function Navbar() {
-  const [altNavbar, setAltNavbar] = useState(false);
+  const [opaqueNavbar, setOpaqueNavbar] = useState(false);
 
+  // The navbar turns opaque when the user has scrolled more than 20% of the
+  // window height.
   const toggleNavbar = () => {
-    if (window.pageYOffset >= 0.2 * window.innerHeight) setAltNavbar(true);
-    else setAltNavbar(false);
+    if (window.scrollY >= 0.2 * window.innerHeight) setOpaqueNavbar(true);
+    else setOpaqueNavbar(false);
   };
-
   useEffect(() => {
     window.addEventListener("scroll", toggleNavbar);
   });
@@ -109,7 +126,7 @@ function Navbar() {
   return (
     <NavbarContainer
       id="navbar"
-      altNavbar={altNavbar}
+      opaqueNavbar={opaqueNavbar}
       className="navbar-container"
     >
       <a href="/#hero" className="navbar-logo-container">
