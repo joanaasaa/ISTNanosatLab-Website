@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { useTheme } from "@mui/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import "../../style.scss";
-import "./Footer.scss";
+import "style.scss";
+import "components/Footer/Footer.scss";
 
-import { istsat1_urls } from "../../globals";
+import { istsat1_urls } from "globals.js";
 
-import logo from "../../resources/images/logos/istsat/logo_white_background.png";
+import logo from "resources/images/logos/istsat/logo_white_background.png";
 
 const FooterTitle = styled.h2`
   margin: 17px 0;

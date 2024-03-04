@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./EmbedMap.scss";
+import "components/EmbedMap/EmbedMap";
 
 function EmbedMap() {
   return (

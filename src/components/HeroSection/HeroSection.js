@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 import hero_background from "../../resources/images/cover.jpg";
 
-import "../../style.scss";
-import "./HeroSection.css";
-import "../../layouts/Section/Section.css";
+import "style.scss";
+import "components/HeroSection/HeroSection.css";
+import "layouts/Section/Section.css";
 
 const HeroBackground = styled.div.attrs((props) => ({
   className: props.className,

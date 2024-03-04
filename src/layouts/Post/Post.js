@@ -1,8 +1,8 @@
 import React from "react";
 
-import "../../style.scss";
-import "./Post.css";
-import PostTitleSection from "../../components/PostTitleSection/PostTitleSection";
+import "style.scss";
+import "layouts/Post/Post.css";
+import PostTitleSection from "components/PostTitleSection/PostTitleSection";
 
 export default function Post(props) {
   var classes = "post-container";

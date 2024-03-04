@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import "../../style.scss";
-import "../../layouts/Section/Section.css";
-import "./PostTitleSection.scss";
+import "style.scss";
+import "layouts/Section/Section.css";
+import "components/PostTitleSection/PostTitleSection.scss";
 
 const PostTitleBackground = styled.div.attrs((props) => ({
   className: props.className,

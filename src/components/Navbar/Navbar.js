@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { useTheme } from "@mui/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import "../../style.scss";
-import "./Navbar.scss";
+import "style.scss";
+import "components/Navbar/Navbar.scss";
 
-import { navbar_entries } from "../../globals";
-import logo from "../../resources/images/logos/istsat/logo_minimalist_white.png";
-import logo_hamburguer from "../../resources/images/logos/istsat/logo_minimalist.png";
+import { navbar_entries } from "globals.js";
+import logo from "resources/images/logos/istsat/logo_minimalist_white.png";
+import logo_hamburguer from "resources/images/logos/istsat/logo_minimalist.png";
 
 const NavbarContainer = styled.div.attrs((props) => ({
   id: props.id,

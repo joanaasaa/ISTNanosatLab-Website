@@ -1,10 +1,10 @@
 import React from "react";
 
-import "../style.scss";
-import "../layouts/Post/Post";
-import Post from "../layouts/Post/Post";
+import "style.scss";
+import "layouts/Post/Post";
+import Post from "layouts/Post/Post.js";
 
-import background from "../resources/images/coding.jpg";
+import background from "resources/images/coding.jpg";
 
 export default function Post1() {
   return (

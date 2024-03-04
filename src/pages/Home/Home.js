@@ -2,31 +2,31 @@ import React from "react";
 import { Grid } from "@mui/material";
 import styled from "styled-components";
 
-import { ISTSat1Button } from "../../style";
-import "../../style.scss";
-import "./Home.scss";
+import { ISTSat1Button } from "style.js";
+import "style.scss";
+import "pages/Home/Home.scss";
 
-import { istsat1_urls } from "../../globals";
+import { istsat1_urls } from "globals.js";
 
-import HeroSection from "../../components/HeroSection/HeroSection";
-import Section from "../../layouts/Section/Section";
+import HeroSection from "components/HeroSection/HeroSection";
+import Section from "layouts/Section/Section";
 
-import istsat1_logo from "../../resources/images/logos/istsat/logo.png";
-import esa_logo from "../../resources/images/logos/esa/esa_logo.png";
-import fys_logo from "../../resources/images/logos/esa/fys_logo.png";
-import activespace_logo from "../../resources/images/logos/activespace.png";
-import amrad_logo from "../../resources/images/logos/amrad.png";
-import anacom_logo from "../../resources/images/logos/anacom.png";
-import cgd_logo from "../../resources/images/logos/cgd.png";
-import dorbit_logo from "../../resources/images/logos/dorbit.png";
-import fernando_logo from "../../resources/images/logos/fernando_ferro_e_irmao.png";
-import inesc_logo from "../../resources/images/logos/inesc.png";
-import ipq_logo from "../../resources/images/logos/ipq.png";
-import ist_logo from "../../resources/images/logos/ist.png";
-import it_logo from "../../resources/images/logos/it.png";
-import lusospace_logo from "../../resources/images/logos/lusospace.png";
-import primetec_logo from "../../resources/images/logos/primetec.png";
-import nav_logo from "../../resources/images/logos/nav.png";
+import istsat1_logo from "resources/images/logos/istsat/logo.png";
+import esa_logo from "resources/images/logos/esa/esa_logo.png";
+import fys_logo from "resources/images/logos/esa/fys_logo.png";
+import activespace_logo from "resources/images/logos/activespace.png";
+import amrad_logo from "resources/images/logos/amrad.png";
+import anacom_logo from "resources/images/logos/anacom.png";
+import cgd_logo from "resources/images/logos/cgd.png";
+import dorbit_logo from "resources/images/logos/dorbit.png";
+import fernando_logo from "resources/images/logos/fernando_ferro_e_irmao.png";
+import inesc_logo from "resources/images/logos/inesc.png";
+import ipq_logo from "resources/images/logos/ipq.png";
+import ist_logo from "resources/images/logos/ist.png";
+import it_logo from "resources/images/logos/it.png";
+import lusospace_logo from "resources/images/logos/lusospace.png";
+import primetec_logo from "resources/images/logos/primetec.png";
+import nav_logo from "resources/images/logos/nav.png";
 
 // NOTE Don't use words like "sponsor" when naming CSS classes or JS variables.
 // Ad blockers look for these types of names to block content. This was happening

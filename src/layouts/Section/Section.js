@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../../style.scss";
-import "./Section.css";
+import "style.scss";
+import "layouts/Section/Section.css";
 
 function Section(props) {
   var classes = "section-container";
